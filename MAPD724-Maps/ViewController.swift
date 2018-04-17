@@ -1,12 +1,5 @@
-//
-//  ViewController.swift
-//  MAPD724-Maps
-//
-//  Created by Kamalpreet Singh on 2018-04-17.
-//  Copyright © 2018 on. All rights reserved.
-//
-
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
 
