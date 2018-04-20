@@ -77,6 +77,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ruP-Sy-ZvD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,6 +87,9 @@
                     </view>
                     <connections>
                         <outlet property="map" destination="tlA-qh-Ztu" id="Q6V-tl-FVy"/>
+                        <outlet property="tfLat" destination="xXI-Ah-CUQ" id="IjS-Lh-laB"/>
+                        <outlet property="tfLong" destination="cUR-9q-6rh" id="3GY-Y2-EMf"/>
+                        <outlet property="tfMag" destination="Hat-eI-lfS" id="Ymz-r5-QAy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

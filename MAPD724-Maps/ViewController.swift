@@ -9,8 +9,9 @@ class ViewController: UIViewController {
     let mapLocation = CLLocationCoordinate2DMake(43.6532, -79.3832)
     
     @IBOutlet weak var map: MKMapView!
-    
-    
+    @IBOutlet weak var tfLat: UITextField!
+    @IBOutlet weak var tfLong: UITextField!
+    @IBOutlet weak var tfMag: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,4 +41,17 @@ class ViewController: UIViewController {
             MKLaunchOptionsMapSpanKey: self.map.region.span
             ])
     }
+        
+    @IBAction func searchMap(_ sender: UIButton) {
+        
+        if (!(tfLat.text == "" || tfLong.text == "" || tfMag.text == ""))
+        {
+            let loc = CLLocationCoordinate2DMake(Double(tfLat.text!)!, Double(tfLong.text!)!)
+            let span = MKCoordinateSpanMake(Double(tfMag.text!)!, Double(tfMag.text!)!)
+            let reg = MKCoordinateRegionMake(loc, span)
+            self.map.region = reg
+        }
+        
+    }
+    
 }
