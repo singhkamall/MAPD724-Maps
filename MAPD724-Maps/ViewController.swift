@@ -18,15 +18,14 @@ class ViewController: UIViewController {
         let loc = CLLocationCoordinate2DMake(latt, long)
         let span = MKCoordinateSpanMake(delta, delta)
         let reg = MKCoordinateRegionMake(loc, span)
-        
         self.map.region = reg
+        
+        let ann = MKPointAnnotation()
+        ann.coordinate = self.mapLocation
+        ann.title = "Toronto"
+        ann.subtitle = "A place that's really cool"
+        self.map.addAnnotation(ann)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
-
