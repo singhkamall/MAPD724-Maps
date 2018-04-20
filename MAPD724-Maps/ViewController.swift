@@ -6,7 +6,7 @@ class ViewController: UIViewController {
     let long = -79.3832
     let latt = 43.6532
     var delta = 5.0
-    let mapLocation = CLLocationCoordinate2DMake(43.6532, -79.3832)
+    var mapLocation = CLLocationCoordinate2DMake(43.6532, -79.3832)
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var tfLat: UITextField!
@@ -47,9 +47,9 @@ class ViewController: UIViewController {
         
         if (!(tfLat.text == "" || tfLong.text == "" || tfMag.text == ""))
         {
-            let loc = CLLocationCoordinate2DMake(Double(tfLat.text!)!, Double(tfLong.text!)!)
+            self.mapLocation = CLLocationCoordinate2DMake(Double(tfLat.text!)!, Double(tfLong.text!)!)
             let span = MKCoordinateSpanMake(Double(tfMag.text!)!, Double(tfMag.text!)!)
-            let reg = MKCoordinateRegionMake(loc, span)
+            let reg = MKCoordinateRegionMake(self.mapLocation, span)
             self.map.region = reg
             
             for annot in self.map.annotations {
@@ -57,8 +57,8 @@ class ViewController: UIViewController {
             }
             
             let ann = MKPointAnnotation()
-            ann.coordinate = loc
-            ann.subtitle = "New location annotation"
+            ann.coordinate = self.mapLocation
+            ann.subtitle = "A really icy place"
             self.map.addAnnotation(ann)
             
         }
