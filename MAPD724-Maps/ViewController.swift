@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tfLong: UITextField!
     @IBOutlet weak var tfMag: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +51,16 @@ class ViewController: UIViewController {
             let span = MKCoordinateSpanMake(Double(tfMag.text!)!, Double(tfMag.text!)!)
             let reg = MKCoordinateRegionMake(loc, span)
             self.map.region = reg
+            
+            for annot in self.map.annotations {
+                self.map.removeAnnotation(annot)
+            }
+            
+            let ann = MKPointAnnotation()
+            ann.coordinate = loc
+            ann.subtitle = "New location annotation"
+            self.map.addAnnotation(ann)
+            
         }
         
     }
